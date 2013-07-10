@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wholesale Site</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "accordion" %>
+  <%= javascript_include_tag "effects" %>
+  <%= javascript_include_tag "prototype" %>
+  <%= csrf_meta_tags %>
+<!--JS code for accordion-->
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script type="text/javascript">
+$(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });
+$(function() {
+    $( "#accordion2" ).accordion({
+      collapsible: true
+    });
+  });
+
+</script>
+
+</head>
+<body>
+
+	<header id="header" class="clearfix use-logo">
+		<div class="head">
+		        <%= link_to image_tag("logo.png", :border => 0), root_path, :id => "logo" %>
+		      </a><!-- #logo -->
+		      <nav role="navigation">  
+		        <ul id="nav">
+
+		          <li class="nav-item first">
+		            <%= link_to "FAQ", static_pages_faq_path, :class => "nav-item-link smooth" %>
+		          </li>
+		          <li class="nav-item">
+		            <%= link_to "APPLY", apply_path, :class => "nav-item-link smooth" %>
+		          </li>
+		          <li class="nav-item">
+		          	<%= link_to "CATALOG", static_pages_catalog_path, :class => "nav-item-link smooth" %>
+		          </li>
+		          <li class="nav-item last">
+		          	<%= link_to raw("GO TO FULL SHOP &#8614;"), "http://www.goscratchit.com/collections/shop", :class => "nav-item-link smooth" %>
+		          </li>
+		        </ul>
+		      </nav>
+		      <h1 class="hidden">SCRATCH</h1>
+		</div>
+	</header><!-- #header -->
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+
+<footer id="footer" class="has-twitter">
+
+      <ul class="clearfix" id="footer-modules">
+
+        
+        <li class="ft-module one-third" id="about-module">
+          <h3>ABOUT</h3>
+          <div id="about-description" class="clearfix">
+            Scratch was born out of the simple idea that nail wraps are really cool but most of the designs currently out there are not. Scratch works as a platform for creatives of all backgrounds to share their art through a new medium and grow their audience.
+          </div>
+          <a id="ft-share-twitter" class="ft-share ir" href="http://www.twitter.com/goscratchit">Twitter</a>
+          <a id="ft-share-facebook" class="ft-share ir" href="http://www.facebook.com/goscratchit">Facebook</a>
+          <a id="ft-share-tumblr" class="ft-share ir" href="http://goscratchit.tumblr.com/">Tumblr</a>          
+          <a id="ft-share-pinterest" class="ft-share ir" href="http://pinterest.com/goscratchit">Pinterest</a>
+          
+          
+          
+        </li>
+        
+          <li class="ft-module one-third"  id="mailing-list-module">
+            <h3>GOOD THINGS</h3>
+            
+            
+            <form method='post' action='/contact' class='contact-form' accept-charset='UTF-8'><input name='form_type' type='hidden' value='customer'/><input name="utf8" type="hidden" value="✓">         
+            
+                   
+            <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter" />
+            <input type="hidden" id="newsletter-first-name" name="contact[first_name]" value="Subscriber" />
+            <input type="hidden" id="newsletter-last-name" name="contact[last_name]" value="Newsletter" />
+            <input type="email" placeholder="your@email.com" name="contact[email]" id="email-input" />
+            <input type="submit" class="btn styled-submit" value="Sign Up" name="subscribe" id="email-submit" />
+            
+            </form> 
+            
+          </li>
+         
+
+        </ul>
+
+      </footer><!-- #footer -->
+      
+      
+       <div id="sub-footer" class="clearfix">
+      <div class="sub-container">
+      <div class="footer-left-content">
+        
+        <div class="footer-nav accent-text" role="navigation">
+        
+          <a href="/pages/instructions" title="instructions">instructions</a> 
+        
+          <%= link_to "about us", static_pages_about_path %> 
+        
+           <%= link_to "faq", static_pages_faq_path %>
+        
+        </div>
+        
+        <p id="shopify-attr" class="accent-text" role="contentinfo">Copyright &copy; 2013 SCRATCH.</p>
+      </div> <!-- #footer-left-content -->
+</body>
+</html>
